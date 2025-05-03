@@ -37,7 +37,7 @@
             }
 
             .image-slider {
-                flex: 45% 0 0;
+                flex: 50% 0 0;
                 align-self: stretch;
                 position: relative;
             }
@@ -71,10 +71,13 @@
             }
 
             .company-info {
-                margin: 48px 48px;
+                max-width: 696px;
+                margin: 48px auto;
+                padding: 0 48px;
                 line-height: 1.8;
                 word-wrap: break-word;
                 opacity: 0;
+                box-sizing: border-box;
                 transition: opacity 0.3s ease-in-out;
             }
 
@@ -101,6 +104,11 @@
                 text-decoration: underline;
             }
 
+            @media (max-width: 1100px) {
+                .image-slider {
+                    flex-basis: 40%;
+                }
+            }
             @media (max-width: 960px) {
                 .landing-container {
                     flex-direction: column;
@@ -119,7 +127,11 @@
 
                 .company-info {
                     width: 90%;
-                    margin: 32px auto;
+                    margin: 48px auto 32px;
+                    padding: 0;
+                }
+                .logo {
+                    margin-bottom: 32px;
                 }
                 .contact {
                     margin-top: 24px;
@@ -220,7 +232,7 @@
                 slides[currentIndex].classList.add("active");
             }
 
-            setInterval(showNextSlide, 5000);
+            setInterval(showNextSlide, 10_000);
         </script>
     </body>
 </html>
